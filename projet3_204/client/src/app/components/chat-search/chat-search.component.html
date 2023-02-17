@@ -1,0 +1,47 @@
+<!--Exemple you can remove it after-->
+<!--
+    <button (click)="this.leaveChat()">leave chat</button>
+    <button (click)="this.createChat()">create chat</button>
+    <div *ngFor="let chat of this.dataSourceChats">
+        <button (click)="this.joinChat(chat.chatIndex)">{{ chat.chatName }}</button>
+    </div>
+-->
+<!--End of Exemple-->
+
+<div class="chat-search">
+    <mat-form-field appearance="standard">
+        <mat-label>Filtrer cannaux...</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrer cannaux" #input />
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSourceChats" class="mat-elevation-z8 demo-table">
+        <ng-container matColumnDef="Chat">
+            <th mat-header-cell *matHeaderCellDef>Chat</th>
+            <td mat-cell *matCellDef="let chat">
+                <a>{{ chat.chatName }}</a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Index">
+            <th mat-header-cell *matHeaderCellDef>Index</th>
+            <td mat-cell *matCellDef="let chat">
+                <a>{{ chat.chatIndex }}</a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Créateur">
+            <th mat-header-cell *matHeaderCellDef>Créateur</th>
+            <td mat-cell *matCellDef="let chat">
+                <a>{{ chat.chatCreator }}</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+            [class.demo-row-is-clicked]="clickedRow.has(row)"
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="clickedRow.has(row); joinChat(row.chatIndex)"
+        ></tr>
+    </table>
+</div>

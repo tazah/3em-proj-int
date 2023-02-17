@@ -1,0 +1,24 @@
+<div class="request-table">
+    <p>Liste de demandes</p>
+    <table mat-table [dataSource]="dataSourceRequests" class="mat-elevation-z8">
+        <ng-container matColumnDef="Nom">
+            <th mat-header-cell *matHeaderCellDef>
+                <p>Nom</p>
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <a
+                    >{{ element }}
+                    <button class="accept" (click)="acceptRequest(element.name)">
+                        <mat-icon>done</mat-icon>
+                    </button>
+                    <button class="accept" (click)="rejectRequest(element.name)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsRequestTable"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsRequestTable"></tr>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div class="container justified">
+    <div id="chatbox">
+        <div #scrollMe id="chat-history">
+            <div
+                *ngFor="let chat of this.chatCommunicationService.chatHistory"
+                class="{{ userAuthentificationService.userProtected.userName === chat.sender }}-player"
+            >
+                <div>
+                    <div *ngIf="userAuthentificationService.userProtected.userName === chat.sender">Moi</div>
+                    <div *ngIf="userAuthentificationService.userProtected.userName !== chat.sender">
+                        {{ chat.sender }}
+                    </div>
+                </div>
+                <div id="message" class="{{ userAuthentificationService.userProtected.userName === chat.sender }}-message">
+                    {{ chat.message }}
+                </div>
+                <div class="messageTime">
+                    {{ chat.time }}
+                </div>
+            </div>
+        </div>
+        <div class="input-container">
+            <input
+                [(ngModel)]="newMessage"
+                #clearMe
+                (keyup.enter)="onKeyup($event)"
+                type="message"
+                name="messageInput"
+                id="messageInput"
+                maxlength="512"
+            />
+            <button (click)="sendMessage()" class="msg_send_btn stack top" type="submit">
+                <mat-icon color="primary" matSuffix>send</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

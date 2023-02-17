@@ -1,0 +1,86 @@
+<canvas #selectionBoxCanvas class="selection-box-canvas" [attr.width]="canvasWidth" [attr.height]="canvasHeight"></canvas>
+<div *ngIf="isInSelection">
+    <div
+        class="selection-rectangle"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, true, false)"
+        (mousemove)="onMouseMoveSelection($event)"
+        (mouseup)="onMouseUpSelection($event)"
+        [style.width.px]="selectionBoxDims.x"
+        [style.height.px]="selectionBoxDims.y"
+        [style.top.px]="selectionRectangleTopLeftCorner.y"
+        [style.left.px]="selectionRectangleTopLeftCorner.x"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.TopLeft)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.TopLeft].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.TopLeft].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.TopMiddle)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.TopMiddle].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.TopMiddle].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.TopRight)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.TopRight].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.TopRight].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.MiddleLeft)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.MiddleLeft].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.MiddleLeft].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.MiddleRight)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.MiddleRight].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.MiddleRight].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.BottomLeft)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.BottomLeft].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.BottomLeft].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.BottomMiddle)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.BottomMiddle].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.BottomMiddle].x - buttonSideLength / 2"
+    ></div>
+    <div
+        class="resizeButton"
+        [attr.draggable]="false"
+        (mousedown)="onMouseDownSelection($event, false, true, SelectionButtonPosition.BottomRight)"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="buttons[SelectionButtonPosition.BottomRight].y - buttonSideLength / 2"
+        [style.left.px]="buttons[SelectionButtonPosition.BottomRight].x - buttonSideLength / 2"
+    ></div>
+</div>

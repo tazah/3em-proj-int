@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="menu-box">
+        <h1 class="header-item">{{ title }}</h1>
+        <mat-divider id="divider"></mat-divider>
+        <button mat-raised-button class="btn" (click)="newDrawing()" routerLink="/editor">Créer un nouveau dessin</button>
+        <button mat-raised-button class="btn" [disabled]="!savedDrawingAvailable" routerLink="/editor">
+            Continuer un dessin
+        </button>
+        <button mat-raised-button class="btn" (click)="openCarrousel()">Ouvrir le carrousel de dessins</button>
+    </div>
+    <div class="footer-item">
+        <h4 class="team-name">Équipe #208</h4>
+        <p>Feriel Tabbane, Khaoula Sabri, Antoine Descombes, Dorine Dantrun, Hadi Charara</p>
+    </div>
+</div>

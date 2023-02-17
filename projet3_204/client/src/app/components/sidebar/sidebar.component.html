@@ -1,0 +1,171 @@
+<div class="dashboard">
+    <div class="top-part">
+        <mat-grid-list cols="2">
+            <mat-grid-tile *ngFor="let tool of toolDict">
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        [id]="tool.id"
+                        (click)="onClick(tool.key)"
+                        matTooltip="{{ tool.name }} [{{ tool.key }}]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [ngClass]="{ primary: tool.key === currentTool }"
+                    >
+                        <mat-icon mat-list-icon class="maticon" [svgIcon]="tool.loadedSvg"></mat-icon>
+                    </a>
+                </mat-nav-list>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    <div class="bottom-part">
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="2">
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        matTooltip="Copier [Ctrl + C]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        (click)="copy()"
+                        [disabled]="!selectionOptionsAvailable"
+                        [ngClass]="{ disabled: !selectionOptionsAvailable }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-content-copy"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        matTooltip="Coller [Ctrl + V]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        (click)="paste()"
+                        [disabled]="noSelectionInMemory"
+                        [ngClass]="{ disabled: noSelectionInMemory }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-content-paste"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        matTooltip="Couper [Ctrl + X]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        (click)="cut()"
+                        [disabled]="!selectionOptionsAvailable"
+                        [ngClass]="{ disabled: !selectionOptionsAvailable }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-content-cut"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        matTooltip="Supprimer [Del]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        (click)="delete()"
+                        [disabled]="!selectionOptionsAvailable"
+                        [ngClass]="{ disabled: !selectionOptionsAvailable }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-delete"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="2">
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        (click)="undo()"
+                        matTooltip="Annuler [Ctrl + Z]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [disabled]="undoArrayIsEmpty"
+                        [ngClass]="{ disabled: undoArrayIsEmpty }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-undo"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-nav-list class="nav-list">
+                    <a
+                        class="list-item"
+                        mat-list-item
+                        (click)="redo()"
+                        matTooltip="Refaire [Ctrl + Shift + Z]"
+                        [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                        [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                        [disabled]="redoArrayIsEmpty"
+                        [ngClass]="{ disabled: redoArrayIsEmpty }"
+                        ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-redo"></mat-icon
+                    ></a>
+                </mat-nav-list>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a>
+                <button (click)="leaveCollabRoom()">quitter</button>
+            </a>
+
+            <a
+                mat-list-item
+                matTooltip="Page d'accueil"
+                [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                routerLink="/home"
+                ><mat-icon mat-list-icon class="maticon" svgIcon="mdi-home"></mat-icon>
+                <div class="file-option-label">Page d'accueil</div>
+            </a>
+            <a
+                mat-list-item
+                id="show-carousel-bouton"
+                (click)="openDialog(FileOptionShortcuts.ShowCarousel)"
+                matTooltip="Ouvrir carousel [Ctrl + G]"
+                [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+            >
+                <mat-icon mat-list-icon class="maticon" svgIcon="mdi-image-multiple"></mat-icon>
+                <div class="file-option-label">Ouvrir carousel</div>
+            </a>
+            <a
+                mat-list-item
+                *ngFor="let options of FILE_OPTIONS_DICT"
+                [id]="options.id"
+                (click)="openDialog(options.key)"
+                matTooltip="{{ options.name }} [Ctrl + {{ options.key }}]"
+                [matTooltipPosition]="DEFAULT_TOOLTIP_POSITION"
+                [matTooltipShowDelay]="DEFAULT_TOOLTIP_DELAY"
+                [matTooltipHideDelay]="DEFAULT_TOOLTIP_DELAY"
+                [disabled]="newFile"
+                [ngClass]="{ disabled: newFile }"
+            >
+                <mat-icon mat-list-icon class="maticon" [svgIcon]="options.loadedSvg"></mat-icon>
+                <div class="file-option-label">{{ options.name }}</div>
+            </a>
+        </mat-nav-list>
+    </div>
+</div>

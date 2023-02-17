@@ -1,0 +1,9 @@
+export const URL_ADD_NEW_ALBUM = 'http://localhost:3000/api/album/addNewAlbum';
+export const URL_GET_ALL_ALBUM = 'http://localhost:3000/api/album/getAllAlbum';
+export const URL_ADD_CHAT = 'http://localhost:3000/api/chat/addChat';
+export const URL_GET_ALL_CHATS = 'http://localhost:3000/api/chat/getAllChats';
+export const URL_ADD_TO_PUBLIC_CHATS = 'http://localhost:3000/api/chat/addUserPublic';
+export const URL_GET_PUBLIC_CHAT = 'http://localhost:3000/api/chat/getPublicChat';
+export const URL_ADD_MESSAGE_PUBLIC_CHAT = 'http://localhost:3000/api/chat/addMessagePublic';
+export const ADD_NEW_DRAWING = 'addNewDrawing';
+export const DELETE_DRAWING = 'deleteDrawing';

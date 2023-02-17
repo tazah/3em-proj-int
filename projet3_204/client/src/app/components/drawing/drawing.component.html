@@ -1,0 +1,64 @@
+<div
+    id="canvasContainer"
+    #canvasContainer
+    [attr.draggable]="false"
+    [style.marginRight.px]="previewCanvasWidth + DEFAULT_MARGINS"
+    [style.marginBottom.px]="previewCanvasHeight + DEFAULT_MARGINS"
+>
+    <canvas
+        id="canvas"
+        #baseCanvas
+        [attr.draggable]="false"
+        [style.backgroundColor]="WHITE"
+        [attr.width]="canvasWidth"
+        [attr.height]="canvasHeight"
+    ></canvas>
+    <canvas
+        id="drawCanvas"
+        [attr.draggable]="false"
+        #previewCanvas
+        [attr.width]="previewCanvasWidth"
+        [attr.height]="previewCanvasHeight"
+        [style.borderBottom]="borderStyle"
+        [style.borderRight]="borderStyle"
+        (mouseout)="onCanvasMouseOut($event)"
+        (mouseover)="onCanvasMouseOver($event)"
+        (mousedown)="onCanvasMouseDown($event)"
+        (click)="onCanvasClick($event)"
+        (dblclick)="onCanvasDblClick($event)"
+    ></canvas>
+    <!--https://stackoverflow.com/questions/37372745/angular-2-jquery-adding-styles-top-left-with-a-mouse-position-->
+    <div
+        class="resizeButton"
+        [id]="BUTTON_POSITION.Corner"
+        [style.pointer-events]="isUsingTool || isDragging ? 'none' : ''"
+        [attr.draggable]="false"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="previewCanvasHeight - buttonSideLength / 2"
+        [style.left.px]="previewCanvasWidth - buttonSideLength / 2"
+        (mousedown)="onResizeMouseDown($event)"
+    ></div>
+    <div
+        class="resizeButton"
+        [id]="BUTTON_POSITION.Bottom"
+        [style.pointer-events]="isUsingTool || isDragging ? 'none' : ''"
+        [attr.draggable]="false"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="previewCanvasHeight - buttonSideLength / 2"
+        [style.left.px]="previewCanvasWidth / 2 - buttonSideLength / 2"
+        (mousedown)="onResizeMouseDown($event)"
+    ></div>
+    <div
+        class="resizeButton"
+        [id]="BUTTON_POSITION.Right"
+        [style.pointer-events]="isUsingTool || isDragging ? 'none' : ''"
+        [attr.draggable]="false"
+        [style.width.px]="buttonSideLength"
+        [style.height.px]="buttonSideLength"
+        [style.top.px]="previewCanvasHeight / 2 - buttonSideLength / 2"
+        [style.left.px]="previewCanvasWidth - buttonSideLength / 2"
+        (mousedown)="onResizeMouseDown($event)"
+    ></div>
+</div>

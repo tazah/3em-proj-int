@@ -1,0 +1,49 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    height: 100%;
+}
+
+.drawingInfo {
+    display: flex;
+    flex-direction: column;
+    // margin-right: 2%;
+}
+
+.name {
+    font-size: x-large;
+    margin-bottom: 5%;
+}
+
+.drawing {
+    width: 85%;
+    height: 85%;
+}
+
+.exit {
+}
+
+.commentTable {
+    margin-top: 7%;
+}
+
+.join {
+}
+
+.author {
+    font-weight: 600;
+    // font-size: larger;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.comment {
+    margin-bottom: 5%;
+}
+
+.join-button {
+    color: white;
+    background-color: #50223c;
+    margin-top: inherit;
+}

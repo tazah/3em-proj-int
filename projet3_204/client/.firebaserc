@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projet3-98eba": {
+      "hosting": {
+        "client": [
+          "projet3-98eba"
+        ]
+      }
+    }
+  }
+}

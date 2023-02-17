@@ -1,0 +1,147 @@
+@import '~@angular/material/theming';
+
+.color-section {
+    justify-content: center;
+}
+
+#section-title {
+    font-size: 15px;
+    margin: 5px;
+}
+
+#current-colors-container {
+    margin-left: 5px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.changing {
+    background-color: var(--color) !important;
+}
+
+.color-title {
+    font-size: 9px;
+}
+
+.color-box {
+    display: inline-block;
+    height: 27px;
+    width: 27px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: thin;
+}
+
+.arrow-button {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.mat-button {
+    width: 40px;
+    height: 40px;
+}
+
+#double-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+.mat-icon {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.canvas-container {
+    padding: 10px 10px 0px 10px;
+    height: 160px;
+}
+
+#canvas-recent-colors-container {
+    height: 240px;
+}
+
+.recent-colors-grid {
+    margin: 0px 10px 10px 10px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
+}
+
+.recent-color-box {
+    margin: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: thin;
+}
+
+#color-toggle-buttons {
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form-container {
+    font-size: 12px;
+    text-align: center;
+}
+
+#color-preview-title {
+    font-size: 10px;
+}
+
+.hexa-input {
+    width: 100px;
+    padding-top: 10px;
+}
+
+#rgb-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rgb-hexa-input {
+    margin: 10px;
+    width: 30px;
+}
+
+#slider-container {
+    text-align: center;
+}
+
+.slider-title {
+    text-align: left;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+mat-slider {
+    width: 150px;
+    justify-content: center;
+}
+
+:host ::ng-deep .slider .mat-slider-thumb {
+    background-color: var(--color);
+}
+
+:host ::ng-deep .slider .mat-slider-thumb-label {
+    background-color: var(--color);
+}
+
+:host ::ng-deep .slider .mat-slider-track-fill {
+    background-color: var(--color);
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: var(--main-selected-item-color) !important;
+}
+
+::ng-deep.mat-form-field-underline .mat-form-field-ripple {
+    background-color: var(--main-selected-item-color) !important;
+}

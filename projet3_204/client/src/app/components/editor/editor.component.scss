@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+
+.container {
+    height: 100%;
+    display: flex;
+    background: linear-gradient(-45deg, var(--main-selected-item-color), #b67ebd, #74c7e6, var(--color));
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.drawing-container {
+    overflow: auto;
+    flex: 1 1 auto;
+}
+
+.attr-bar-container {
+    flex: 1 1 auto;
+}
+
+.drawing {
+    display: grid;
+    width: min-content;
+    outline: none;
+}
+
+.sidebar {
+    @include mat-elevation(2);
+}
+
+.attributebar {
+    width: 200px;
+    @include mat-elevation(2);
+}
+
+.attributebar-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+}
+
+.tab-container {
+    justify-content: center;
+    height: 580px;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+}
+
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+    min-width: 50% !important;
+    padding: 1px !important;
+}
+
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background: var(--main-selected-item-color);
+}

@@ -1,0 +1,35 @@
+<h1 class="header-item">Ajouter un dessin</h1>
+<mat-divider id="divider"></mat-divider>
+
+<h3>Créateur :</h3>
+<h3>Album :</h3>
+<form class="example-form" [formGroup]="drawingNameForm" (ngSubmit)="submit()">
+    <div class="userName-login">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label class="login">Nom du dessin*</mat-label>
+            <input #drawingNameInput class="form-control" formControlName="drawingName" type="text" matInput placeholder="dessin1" />
+            <mat-hint align="end" class="greenColor-class normal-mat-hint" [class.greenColor-class]="drawingNameInput.value.length >= 6">
+                {{ drawingNameInput.value?.length || 0 }}/6</mat-hint
+            >
+
+            <mat-error *ngIf="drawingName?.touched && this.drawingName?.invalid" class="invalid-feedback">
+                <mat-error class="error-block" *ngIf="this.drawingName?.hasError('whitespace')">
+                    Le nom du dessin ne doit pas contenir <strong> d'espace</strong> !!
+                </mat-error>
+                <mat-error *ngIf="drawingName?.hasError('required')"> Le nom du dessin est <strong> requis</strong>! </mat-error>
+                <mat-error *ngIf="drawingName?.hasError('minlength')">
+                    Le nom du dessin doit contenir minimum <strong> 6 caractères</strong>!
+                </mat-error>
+                <mat-error *ngIf="drawingName?.hasError('pattern')">
+                    Le nom du dessin ne doit pas contenir de <strong> caractères spéciaux %$#@ [Espace]</strong>!
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <br />
+
+    <div class="login-btn">
+        <button color="warn" (click)="closeModal()" mat-raised-button>Annuler</button>
+        <button [disabled]="drawingNameForm.invalid" class="submit-btn" color="primary" mat-raised-button type="submit" >Sauvegarder</button>
+    </div>
+</form>

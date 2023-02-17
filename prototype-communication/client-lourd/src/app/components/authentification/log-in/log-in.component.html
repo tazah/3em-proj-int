@@ -1,0 +1,43 @@
+<div class="login-box">
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)='submitOnLogginForm()'>
+        <h1 class="header-item">Connexion</h1>
+        <mat-divider id="divider"></mat-divider>
+        <div class="userName-login">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class = "login">Nom d'utilisateur*</mat-label>
+                <input class='form-control' formControlName="username" type="text" matInput placeholder="sami1234">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error>
+                </mat-error>
+                <mat-error>
+                    le nom d'utilisateur est <strong>obligatoire</strong> !
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="userName-login">
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class = "login">Mot de passe*</mat-label>
+                <input class='form-control' formControlName="password" type="password" matInput
+                    placeholder="mot de passe">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error>
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error>
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="login-btn">
+            <button class="submit-btn" mat-raised-button  type='submit'>
+
+                Se connecter </button>
+        </div>
+
+    </form>
+    <div class="registration-a">
+        <span>Vous n'êtes pas encore membre ? <a href=""
+                (click)=" userAuthentificationService.userIsAlreadySubscribed=false;">S'inscrire</a></span>
+    </div>
+</div>

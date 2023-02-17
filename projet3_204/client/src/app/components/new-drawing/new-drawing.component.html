@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Création d'un nouveau dessin</h2>
+<div mat-dialog-content>
+    <p>Le dessin actuel sera supprimé. Êtes-vous sûr de vouloir continuer?</p>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button routerLink="/editor" style="color: red" (click)="newDrawing()">Confimer</button>
+    <button mat-button (click)="onCancel()">Annuler</button>
+</div>

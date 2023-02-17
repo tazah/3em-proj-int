@@ -1,0 +1,15 @@
+<div class="selection-option-section">
+    <div class="section-title">Seléction</div>
+
+    <div class="select-all-container">
+        <button mat-raised-button (click)="selectAllCanvas()">Tout sélectionner</button>
+    </div>
+
+    <div id="selection-option-container">
+        <mat-radio-group aria-label="Type de sélection" (change)="type = $event.value">
+            <mat-radio-button [value]="SelectionType.Rectangle" [checked]="type === SelectionType.Rectangle">Rectangle de sélection</mat-radio-button>
+            <mat-radio-button [value]="SelectionType.Ellipse" [checked]="type === SelectionType.Ellipse">Ellipse de sélection</mat-radio-button>
+            <mat-radio-button [value]="SelectionType.Lasso" [checked]="type === SelectionType.Lasso">Lasso de sélection</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>

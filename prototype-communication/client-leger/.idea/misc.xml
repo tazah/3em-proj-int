@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.29791666666666666" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/background_chat_input.xml" value="0.3828125" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/btn_background.xml" value="0.21770833333333334" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/btn_background_bleu.xml" value="0.14635416666666667" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/edt_background.xml" value="0.21770833333333334" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29791666666666666" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/ic_send.xml" value="0.29791666666666666" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/drawable/msg_box_background.xml" value="0.3828125" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/activity_login.xml" value="0.38514442916093533" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/activity_sign_up2.xml" value="0.2015625" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/recieve.xml" value="0.3188405797101449" />
+        <entry key="..\:/projet/log3900-204/prototype-communication/prototype-communication/client-leger/app/src/main/res/layout/sent.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

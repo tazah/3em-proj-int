@@ -1,0 +1,11 @@
+<div class="sidebar">
+    <button *ngIf="isChatOpen" (click)="backToChats()" class="back_btn stack top">
+        <mat-icon color="primary" matSuffix>arrow_back</mat-icon>
+    </button>
+    <div *ngIf="!isChatOpen">
+        <app-chat-search (outputFromChild)="receiveChildData($event)"></app-chat-search>
+    </div>
+    <div *ngIf="isChatOpen">
+        <app-chatbox></app-chatbox>
+    </div>
+</div>

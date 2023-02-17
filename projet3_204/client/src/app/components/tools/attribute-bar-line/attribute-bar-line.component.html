@@ -1,0 +1,50 @@
+<div class="line-option-section">
+    <div class="section-title">Ligne</div>
+
+    <div>
+        <div class="slider-title">
+            <span>Épaisseur</span>
+            <span id="unit">px</span>
+        </div>
+        <mat-slider
+            #widthSlider
+            type="number"
+            (change)="lineWidth = $event.value"
+            thumbLabel
+            [step]="sliderStep"
+            [min]="minWidthSlider"
+            [max]="maxWidthSlider"
+            [value]="lineWidth"
+            class="slider"
+        >
+        </mat-slider>
+    </div>
+
+    <div id="line-style-container">
+        <mat-radio-group aria-label="Type de jonction" (change)="typeJonction = $event.value" value="typeJonction">
+            <mat-radio-button [value]="LineTypeJonctions.Normale" [checked]="typeJonction === LineTypeJonctions.Normale">Normale</mat-radio-button>
+            <mat-radio-button [value]="LineTypeJonctions.AvecPoints" [checked]="typeJonction === LineTypeJonctions.AvecPoints"
+                >Avec points</mat-radio-button
+            >
+        </mat-radio-group>
+
+        <div *ngIf="typeJonction === LineTypeJonctions.AvecPoints">
+            <div class="slider-title">
+                <span>Épaisseur des points</span>
+                <span id="unit">px</span>
+            </div>
+            <mat-slider
+                #widthPointSlider
+                type="number"
+                (change)="pointDiameter = $event.value"
+                thumbLabel
+                [step]="sliderStep"
+                [min]="minPointDiameter"
+                [max]="maxPointDiameter"
+                [value]="pointDiameter"
+                class="slider"
+            >
+            </mat-slider>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+.maticon {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::ng-deep .mat-tooltip {
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.primary {
+    background-color: var(--main-selected-item-color) !important;
+}
+
+.nav-list {
+    height: 100%;
+    width: 100%;
+}
+
+.list-item {
+    height: 100% !important;
+}
+
+.mat-list-base {
+    padding-top: 0px !important;
+}
+
+.dashboard {
+    width: 130px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+}
+
+.file-option-label {
+    margin-left: 10px;
+    font-size: 11px;
+    line-height: 15px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.disabled {
+    color: rgba(200, 200, 200);
+    background-color: white;
+}

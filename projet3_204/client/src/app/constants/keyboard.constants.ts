@@ -1,0 +1,15 @@
+export enum KeyboardButton {
+    Shift = 'Shift',
+    Escape = 'Escape',
+    Backspace = 'Backspace',
+    ArrowUp = 'ArrowUp',
+    ArrowDown = 'ArrowDown',
+    ArrowLeft = 'ArrowLeft',
+    ArrowRight = 'ArrowRight',
+    Equal = '=',
+    Plus = '+',
+    Minus = '-',
+    AltKey = 'Alt',
+    Delete = 'Delete',
+    Enter = 'Enter',
+}

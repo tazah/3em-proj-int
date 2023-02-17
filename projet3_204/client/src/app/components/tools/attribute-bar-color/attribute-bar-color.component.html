@@ -1,0 +1,136 @@
+<div class="color-section">
+    <div id="current-colors-container">
+        <div class="color-container">
+            <div class="color-title">Couleur primaire</div>
+            <button
+                mat-stroked-button
+                class="mat-button"
+                (click)="swapCurrent($event, Picker.Primary)"
+                (contextmenu)="swapCurrent($event, Picker.Primary)"
+                [ngClass]="{ changing: currentlyChanging === Picker.Primary }"
+            >
+                <div class="color-box" *ngIf="currentlyChanging !== Picker.Primary" [ngStyle]="{ 'background-color': primaryColor }"></div>
+                <div
+                    class="color-box"
+                    *ngIf="currentlyChanging === Picker.Primary"
+                    [ngStyle]="{ 'background-color': colorPreview || primaryColor }"
+                ></div>
+            </button>
+        </div>
+        <button mat-icon-button class="arrow-button" (click)="swapColors()">
+            <mat-icon id="double-arrow" mat-list-icon class="mat-icon" svgIcon="mdi-arrow-left-right"></mat-icon>
+        </button>
+        <div class="color-container">
+            <div class="color-title">Couleur secondaire</div>
+            <button
+                mat-stroked-button
+                class="mat-button"
+                (click)="swapCurrent($event, Picker.Secondary)"
+                (contextmenu)="swapCurrent($event, Picker.Secondary)"
+                [ngClass]="{ changing: currentlyChanging === Picker.Secondary }"
+            >
+                <div class="color-box" *ngIf="currentlyChanging !== Picker.Secondary" [ngStyle]="{ 'background-color': secondaryColor }"></div>
+                <div
+                    class="color-box"
+                    *ngIf="currentlyChanging === Picker.Secondary"
+                    [ngStyle]="{ 'background-color': colorPreview || secondaryColor }"
+                ></div>
+            </button>
+        </div>
+    </div>
+
+    <div id="canvas-recent-colors-container">
+        <div class="canvas-container">
+            <app-color-palette></app-color-palette>
+            <app-color-slider></app-color-slider>
+        </div>
+
+        <div class="recent-colors-grid">
+            <div
+                *ngFor="let color of recentColors"
+                class="recent-color-box"
+                [ngStyle]="{ 'background-color': color.hex }"
+                [style.width.px]="RECENTS_COLOR_BOX_DIM"
+                [style.height.px]="RECENTS_COLOR_BOX_DIM"
+                (click)="onRecentColorsClick($event, color.hex, Picker.Primary)"
+                (contextmenu)="onRecentColorsClick($event, color.hex, Picker.Secondary)"
+            ></div>
+        </div>
+    </div>
+
+    <div id="form-container">
+        <mat-form-field class="hexa-input">
+            <mat-label>Code hexadecimal</mat-label>
+            <span matPrefix>#</span>
+            <input
+                type="text"
+                matInput
+                (focus)="onEditTextFocus()"
+                (keydown.enter)="hex = $event.target.value"
+                (focusout)="hex = $event.target.value; onEditTextFocusOut()"
+                [value]="hex"
+                maxlength="6"
+            />
+        </mat-form-field>
+
+        <div id="rgb-form-container">
+            <mat-form-field class="rgb-hexa-input">
+                <mat-label>R</mat-label>
+                <span matPrefix>#</span>
+                <input
+                    type="text"
+                    matInput
+                    (focus)="onEditTextFocus()"
+                    (keydown.enter)="red = $event.target.value"
+                    (focusout)="red = $event.target.value; onEditTextFocusOut()"
+                    [value]="red"
+                    maxlength="2"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="rgb-hexa-input">
+                <mat-label>G</mat-label>
+                <span matPrefix>#</span>
+                <input
+                    type="text"
+                    matInput
+                    (focus)="onEditTextFocus()"
+                    (keydown.enter)="green = $event.target.value"
+                    (focusout)="green = $event.target.value; onEditTextFocusOut()"
+                    [value]="green"
+                    maxlength="2"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="rgb-hexa-input">
+                <mat-label>B</mat-label>
+                <span matPrefix>#</span>
+                <input
+                    type="text"
+                    matInput
+                    (focus)="onEditTextFocus()"
+                    (keydown.enter)="blue = $event.target.value"
+                    (focusout)="blue = $event.target.value; onEditTextFocusOut()"
+                    [value]="blue"
+                    maxlength="2"
+                />
+            </mat-form-field>
+        </div>
+
+        <div id="slider-container">
+            <div class="slider-title">Opacité</div>
+            <mat-slider
+                class="slider"
+                #widthSlider
+                type="number"
+                thumbLabel
+                [step]="OPACITY_SLIDER_STEP"
+                [min]="OPACITY_SLIDER_MIN_WIDTH"
+                [max]="OPACITY_SLIDER_MAX_WIDTH"
+                (change)="opacity = $event.value"
+                [value]="opacity"
+            >
+            </mat-slider>
+        </div>
+    </div>
+</div>

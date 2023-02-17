@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragments.UploadPictureFragment">
+
+
+    <ImageView
+        android:id="@+id/pictureTakedWithCamera"
+        android:layout_width="344dp"
+        android:layout_height="251dp"
+        android:gravity="center"
+        android:layout_marginTop="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleChooseWay"
+        app:srcCompat="@drawable/avatar5"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@drawable/avatar5" />
+
+    <TextView
+        android:id="@+id/titleChooseWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Prenez une photo à partir de la caméra :"
+        android:textColor="@color/theme1_blue"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/btn_background_bleu"
+        android:gravity="center"
+        android:text="Retour"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continueBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pictureTakedWithCamera"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/btn_background_purple"
+        android:gravity="center"
+        android:text="Continuer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pictureTakedWithCamera"
+        app:layout_constraintVertical_bias="0.825" />
+
+    <Button
+        android:id="@+id/accesToCamera"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_background_purple"
+        android:gravity="center"
+        android:text="accéder à la caméra"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/pictureTakedWithCamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleChooseWay"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

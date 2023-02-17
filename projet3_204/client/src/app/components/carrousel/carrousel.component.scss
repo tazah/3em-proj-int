@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+
+::ng-deep .carrousel-dialog > mat-dialog-container {
+    padding: 10px !important;
+    height: 650px !important;
+    width: 800px !important;
+    align-items: center;
+}
+
+.card-field {
+    height: 500px;
+    padding: 0px !important;
+}
+
+.card-grid {
+    height: 500px;
+    padding: 0px !important;
+}
+
+.card-tile {
+    height: 500px;
+    padding: 0px !important;
+}
+
+.card {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    height: 450px;
+}
+
+.card-header {
+    margin-bottom: 10px;
+}
+
+mat-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.delete-button {
+    color: red;
+}
+
+.mat-dialog-actions {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.page-switchers {
+    padding-right: 8px;
+}
+
+.page-label {
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 12px;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    letter-spacing: normal;
+}
+
+.page-button {
+    height: 40px;
+    width: 40px;
+    margin: 0px !important;
+}
+
+.page-switch-icon {
+    height: 28px;
+    width: 28px;
+}
+
+.toolbar {
+    width: 100%;
+}

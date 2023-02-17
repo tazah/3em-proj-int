@@ -1,0 +1,52 @@
+.eraser-option-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.section-title {
+    margin: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.slider-title {
+    margin: 0px 0px 20px 25px;
+    color: grey;
+    font-size: 11px;
+    text-align: left;
+}
+
+span {
+    vertical-align: middle;
+}
+
+#unit {
+    font-size: 8.5px;
+    margin-left: 5px;
+}
+
+mat-slider {
+    width: 170px;
+    justify-content: center;
+}
+
+:host ::ng-deep .slider .mat-slider-thumb {
+    background-color: var(--color);
+    transform: scale(0) !important;
+}
+
+:host ::ng-deep .slider .mat-slider-thumb-label {
+    background-color: var(--color);
+    transform: rotate(45deg) !important;
+    border-radius: 50% 50% 0 !important;
+}
+
+:host ::ng-deep .slider .mat-slider-track-fill {
+    background-color: var(--color);
+}
+
+:host ::ng-deep .slider .mat-slider-thumb-label-text {
+    opacity: 1 !important;
+}

@@ -1,0 +1,29 @@
+<div class="rectangle-option-section">
+    <div class="section-title">Rectangle</div>
+
+    <div>
+        <div class="slider-title">
+            <span>Épaisseur</span>
+            <span id="unit">px</span>
+        </div>
+        <mat-slider
+            #widthSlider
+            type="number"
+            (change)="lineWidth = $event.value"
+            thumbLabel
+            [step]="sliderStep"
+            [min]="minWidthSlider"
+            [max]="maxWidthSlider"
+            [value]="lineWidth"
+            class="slider"
+        >
+        </mat-slider>
+    </div>
+    <div>
+        <mat-radio-group aria-label="Style du Rectangle" (change)="shapeStyle = $event.value">
+            <mat-radio-button [value]="Style.STYLE1" [checked]="shapeStyle === Style.STYLE1">Contour</mat-radio-button>
+            <mat-radio-button [value]="Style.STYLE2" [checked]="shapeStyle === Style.STYLE2">Plein</mat-radio-button>
+            <mat-radio-button [value]="Style.STYLE3" [checked]="shapeStyle === Style.STYLE3">Plein avec Contour</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>

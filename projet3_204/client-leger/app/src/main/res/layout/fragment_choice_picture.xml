@@ -1,0 +1,318 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragments.ImageChoiceFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout6"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.838"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView6"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_blue"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layout6"
+            app:layout_constraintEnd_toEndOf="@+id/layout6"
+            app:layout_constraintStart_toStartOf="@+id/layout6"
+            app:layout_constraintTop_toTopOf="@+id/layout6">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/LuffyImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar6"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout5"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView5"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_blue"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layout5"
+            app:layout_constraintEnd_toEndOf="@+id/layout5"
+            app:layout_constraintStart_toStartOf="@+id/layout5"
+            app:layout_constraintTop_toTopOf="@+id/layout5">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/onizukaImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar5"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout4"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.838"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView4"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_blue"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layout4"
+            app:layout_constraintEnd_toEndOf="@+id/layout4"
+            app:layout_constraintStart_toStartOf="@+id/layout4"
+            app:layout_constraintTop_toTopOf="@+id/layout4">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/pepeImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar4"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="1271dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="Choisissez parmis les images suivantes :"
+        android:textColor="@color/theme1_blue"
+        android:textSize="36sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginEnd="129dp"
+        android:background="@drawable/btn_background_bleu"
+        android:text="Retour"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continueBtn"
+        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.929" />
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="277dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/btn_background_purple"
+        android:text="Continuer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.994" />
+<!--
+/////////////////////////////image 1///////////////////////////////////
+-->
+
+    <!--
+    /////////////////////////////image 2///////////////////////////////////
+    -->
+
+    <!--
+     /////////////////////////////image 3///////////////////////////////////
+     -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layaout1"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView1"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_green"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layaout1"
+            app:layout_constraintEnd_toEndOf="@+id/layaout1"
+            app:layout_constraintStart_toStartOf="@+id/layaout1"
+            app:layout_constraintTop_toTopOf="@+id/layaout1">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/catImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar1"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout2"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView2"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_blue"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layout2"
+            app:layout_constraintEnd_toEndOf="@+id/layout2"
+            app:layout_constraintStart_toStartOf="@+id/layout2"
+            app:layout_constraintTop_toTopOf="@+id/layout2">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/sangokuImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar2"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout3"
+        android:layout_width="258dp"
+        android:layout_height="287dp"
+
+        app:cardCornerRadius="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView3"
+            android:layout_width="222dp"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/theme1_blue"
+            app:cardCornerRadius="280dp"
+            app:layout_constraintBottom_toBottomOf="@+id/layout3"
+            app:layout_constraintEnd_toEndOf="@+id/layout3"
+            app:layout_constraintStart_toStartOf="@+id/layout3"
+            app:layout_constraintTop_toTopOf="@+id/layout3">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/momoImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar3"
+                app:shapeAppearanceOverlay="@style/Circular"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="40dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

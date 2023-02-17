@@ -1,0 +1,6 @@
+<label for="file">File:</label>
+<input type="file" (change)="avatarService.upload($event)" accept=".png,.jpg" />
+<button (click)="avatarService.getUrl()">Upload Image</button>
+
+<ngx-avatar size="150" src='{{avatarService.fireBaseFileUrl}}'>
+</ngx-avatar>

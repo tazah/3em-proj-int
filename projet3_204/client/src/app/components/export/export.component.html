@@ -1,0 +1,44 @@
+<div class="export-dialog-layout">
+    <canvas #previewCanvas class="preview-layer" [attr.draggable]="false" [attr.height]="previewCanvasHeight" [attr.width]="previewCanvasWidth">
+    </canvas>
+
+    <div class="bottom-part">
+        <div class="export-container">
+            <mat-form-field class="image-text-box">
+                <mat-label>Veuillez insérer le nom de l'image</mat-label>
+
+                <input matInput [formControl]="imgName" />
+            </mat-form-field>
+
+            <mat-form-field class="image-filter">
+                <mat-label>Veuillez choisir un filtre </mat-label>
+                <mat-select class="filtres" [(ngModel)]="filtre" (ngModelChange)="applyFilter()">
+                    <mat-option value="Aucun filtre">Aucun filtre</mat-option>
+                    <mat-option value="Brouillé">Brouillé</mat-option>
+                    <mat-option value="Inversion des couleurs">Inversion des couleurs</mat-option>
+                    <mat-option value="Hue-rotation">Hue-rotation</mat-option>
+                    <mat-option value="Sepia">Sepia</mat-option>
+                    <mat-option value="Contrast">Contrast</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="image-type">
+                <mat-label>Veuillez choisir un type </mat-label>
+                <mat-select class="filtres" matInput [(ngModel)]="type">
+                    <mat-option value="jpeg">JPG</mat-option>
+                    <mat-option value="png">PNG</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <a #exportElement href="url"></a>
+
+        <mat-divider></mat-divider>
+        <div class="buttons" style="text-align: center">
+            <div mat-dialog-actions align="end">
+                <button mat-button [disabled]="buttonsDisabled" class="confirmationButton" (click)="downloadImg()">Exporter</button>
+                <button mat-button class="confirmationButton" (click)="uploadToImgur()">Téléverser sur Imgur</button>
+                <button class="cancel-button" mat-button (click)="onCancel()">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

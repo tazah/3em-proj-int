@@ -1,0 +1,48 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    // min-height: 9vh;
+    background-color: #c1cfe2;
+    margin-left: auto;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #2C3763;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    // left: 700px;
+   // position: absolute;
+    text-align: center;
+    margin : auto;
+}
+
+.logout{
+   background-color: #723156;
+   align-items: center;
+   color: white;
+  // position: relative;
+   right: 0px;
+   display: flex;
+    // justify-content: space-around;
+
+
+}
+
+// .avatar{
+//     align-items: center;
+//     display: flex;
+//     flex-direction: row;
+//     // margin-left: 1300px;
+//     // position: relative;
+// }
+
+
+
+
+

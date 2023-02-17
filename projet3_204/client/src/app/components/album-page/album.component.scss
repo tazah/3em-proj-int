@@ -1,0 +1,26 @@
+.container {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.left {
+    padding: 20px;
+    float: left;
+    width: 20%;
+}
+
+.main {
+    padding: 20px;
+    float: left;
+    width: 60%;
+}
+
+.right {
+    padding: 20px;
+    float: left;
+    width: 20%;
+}

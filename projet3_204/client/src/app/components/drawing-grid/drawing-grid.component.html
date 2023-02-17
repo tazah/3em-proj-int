@@ -1,0 +1,33 @@
+<div>
+    <div class="album-name">{{ this.albumName }}</div>
+    <button mat-mini-fab color="primary" (click)="apenAddDialogue()" aria-label="Example icon button with a delete icon">
+        <mat-icon>add_circle_outline</mat-icon>
+    </button>
+</div>
+<div>
+    <mat-card class="fix-card-menu">
+        <mat-card-subtitle>Dessin</mat-card-subtitle>
+        <mat-card-subtitle>Créateur</mat-card-subtitle>
+        <mat-card-subtitle> Date</mat-card-subtitle>
+        <mat-card-subtitle> Supprimer</mat-card-subtitle>
+        <mat-card-subtitle> Modifier</mat-card-subtitle>
+        <mat-card-subtitle> Action</mat-card-subtitle>
+    </mat-card>
+</div>
+<div class="grid" id="style-4" (contextmenu)="$event.preventDefault()">
+    <div *ngFor="let drawing of this.drawingNames" class="photos">
+        <mat-card>
+            <mat-card-title>{{ drawing.drawingName }}</mat-card-title>
+            <mat-card-subtitle>{{ drawing.owner }}</mat-card-subtitle>
+            <mat-card-subtitle> {{ drawing.dateOfCreation }}</mat-card-subtitle>
+            <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-raised-button color="primary" (click)="this.joinRoom(drawing.socketIndex)">Rejoindre</button>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<div class="registration-box">
+
+
+    <form class="example-form" [formGroup]="registerForm" (ngSubmit)='submitOnRegistrationForm()'>
+        <h1 class="header-item">Inscription</h1>
+        <div class="avatar-box">
+
+            <img ngxGravatar [email]="'example@mail.com'" [size]='100' />
+            <i class="fa fa-edit fa-w-18 fa-2x edit-icon"></i>
+
+        </div>
+        <mat-divider id="divider"></mat-divider>
+        <div class="userName-login">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class = "login">Email*</mat-label>
+                <input class='form-control' formControlName="email" type="text" matInput
+                    placeholder="sami.bourai@polymtl.ca">
+
+                <mat-error *ngIf="email?.touched && this.email?.invalid" class="invalid-feedback">
+                    <mat-error class='error-block' *ngIf='this.email?.hasError("whitespace")'>
+                        L'email ne doit pas contenir <strong>d'espace</strong> !!
+                    </mat-error>
+                    <mat-error *ngIf='email?.hasError("required")'>
+                        L'email est <strong>requis</strong>!
+                    </mat-error>
+                    <mat-error *ngIf='email?.hasError("email")'>
+                        Le format de l'email est <strong>incorrect</strong>!
+                    </mat-error>
+
+
+                </mat-error>
+
+            </mat-form-field>
+
+        </div>
+
+        <div class="userName-login">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class = "login">Nom d'utilisateur*</mat-label>
+                <input #userNameInput class='form-control' formControlName="username" type="text" matInput
+                    placeholder="sami1234">
+                <mat-hint align="end" class='greenColor-class normal-mat-hint'
+                    [class.greenColor-class]="userNameInput.value.length>=6">
+                    {{userNameInput.value?.length || 0}}/6</mat-hint>
+                <mat-error *ngIf="username?.touched && this.username?.invalid" class="invalid-feedback">
+                    <mat-error class='error-block' *ngIf='this.username?.hasError("whitespace")'>
+                        Le nom d'utilisateur ne doit pas contenir <strong> d'espace</strong> !!
+                    </mat-error>
+                    <mat-error *ngIf='username?.hasError("required")'>
+                        Le nom d'utilisateur est <strong> requis</strong>!
+                    </mat-error>
+                    <mat-error *ngIf='username?.hasError("minlength")'>
+                        Le nom d'utilisateur doit contenir minimum <strong> 6 caractères</strong>!
+                    </mat-error>
+                    <mat-error *ngIf='username?.hasError("pattern") && !username?.hasError("whitespace")'>
+                        Le nom d'utilisateur ne doit pas contenir de <strong> caractères spéciaux</strong>!
+                    </mat-error>
+
+                </mat-error>
+            </mat-form-field>
+
+
+
+
+        </div>
+
+        <div class="userName-login-password">
+            <div class="password-registration">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label class = "login">Mot de passe*</mat-label>
+                    <input class='form-control' #passwordx formControlName="password" type="password" matInput
+                        placeholder="Mot de passe">
+
+                    <mat-error *ngIf="password?.touched && this.password?.invalid" class="invalid-feedback">
+                        <mat-error class='error-block' *ngIf='this.password?.hasError("whitespace")'>
+                            Le mot de passe ne doit pas contenir <strong> d'espace</strong> !!
+                        </mat-error>
+                        <mat-error *ngIf='password?.hasError("required")'>
+                            Un mot de passe est <strong> requis</strong>!
+                        </mat-error>
+                        <mat-error *ngIf='password?.hasError("minlength")'>
+                            Le mot de passe doit contenir minimum <strong> 6 caractères</strong>!
+                        </mat-error>
+
+
+                    </mat-error>
+
+
+                </mat-form-field>
+            </div>
+            <div class="password-confirmation">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label class = "login">Confirmation*</mat-label>
+                    <input class='form-control' appMatchCustumValidator="passwordx"
+                        formControlName="passwordConfirmation" type="password" matInput placeholder="Mot de passe">
+
+
+                    <mat-error *ngIf="passwordConfirmation?.touched && this.passwordConfirmation?.invalid"
+                        class="invalid-feedback">
+
+                        <mat-error *ngIf='passwordConfirmation?.hasError("passwordNotMatch")'>
+                            la confirmation du mot de passe est <strong> requise</strong>!
+                        </mat-error>
+
+
+
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+        <div class="login-btn">
+            <button class="submit-btn" [disabled]="registerForm.invalid" mat-raised-button color="warn" type='submit'>
+
+                 Se connecter</button>
+        </div>
+        <div class="registration-a">
+            <span>Vous êtes déjà membre de PolyPaint ? 
+                <a (click)="userAuthentificationService.userIsAlreadySubscribed=true;" href=""> Se connecter</a>
+            </span>
+        </div>
+    </form>
+
+
+
+
+    <!-- <ng-template #providerTrue>
+
+        <form class="example-form" [formGroup]="providerForm" (ngSubmit)="onSubmitProviderForm()">
+            <div class="userName-login">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nom d'utilisateur*</mat-label>
+                    <input class='form-control' formControlName="usernameProvider" type="text" matInput
+                        placeholder="sami1234">
+                    <mat-error>
+                    </mat-error>
+                    <mat-error>
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+
+            <div class="other-provider">
+                <button class="submit-btn" (click)="isUserSelectProvider=false;" mat-raised-button color="warn">
+
+                    Retour</button>
+                <button type='submit' class="submit-btn" mat-raised-button color="warn">
+
+                    Continuer</button>
+
+
+            </div>
+        </form>
+    </ng-template> -->
+</div>

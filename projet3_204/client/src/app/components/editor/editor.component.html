@@ -1,0 +1,31 @@
+<mat-sidenav-container [attr.draggable]="false" class="container" autosize>
+    <mat-sidenav #sidenav [attr.draggable]="false" class="sidebar" mode="side" opened="true">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content [attr.draggable]="false" class="drawing-container">
+        <mat-sidenav-container [attr.draggable]="false" class="container" autosize>
+            <mat-sidenav [attr.draggable]="false" #attributeBar mode="side" class="attributebar">
+                <div class="attributebar-content">
+                    <div class="tool-options" [attr.draggable]="false" [ngSwitch]="currentTool">
+                        <app-attribute-bar-eraser *ngSwitchCase="ToolKey.Eraser"></app-attribute-bar-eraser>
+                        <app-attribute-bar-pencil *ngSwitchCase="ToolKey.Pencil"></app-attribute-bar-pencil>
+                        <app-attribute-bar-line *ngSwitchCase="ToolKey.Line"></app-attribute-bar-line>
+                        <app-attribute-bar-rectangle *ngSwitchCase="ToolKey.Rectangle"></app-attribute-bar-rectangle>
+                        <app-attribute-bar-ellipse *ngSwitchCase="ToolKey.Ellipse"></app-attribute-bar-ellipse>
+                        <app-attribute-bar-selection *ngSwitchCase="ToolKey.Selection"></app-attribute-bar-selection>
+                    </div>
+                    <div class="tab-container">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="maticon" svgIcon="mdi-palette"></mat-icon>
+                        </ng-template>
+                        <app-attribute-bar-color></app-attribute-bar-color>
+                    </div>
+                </div>
+            </mat-sidenav>
+            <mat-sidenav-content #drawingContainer [attr.draggable]="false" class="drawing-container">
+                <app-drawing [attr.draggable]="false" #appDrawing class="drawing" tabindex="0"></app-drawing>
+                <app-selection-box [canvasHeight]="drawingContainerHeight" [canvasWidth]="drawingContainerWidth"></app-selection-box>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-sidenav-content>
+</mat-sidenav-container>

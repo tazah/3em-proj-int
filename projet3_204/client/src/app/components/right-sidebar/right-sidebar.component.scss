@@ -1,0 +1,21 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.back_btn {
+    border: medium none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 33px;
+    width: 33px;
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 0.5%;
+}
+
+.stack-top {
+    z-index: 10;
+}

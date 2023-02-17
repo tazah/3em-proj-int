@@ -1,0 +1,13 @@
+<div class="container justified">
+    <div id="chatbox">
+        <div #scrollMe id="chat-history">
+            <div *ngFor="let chat of this.chatCommunicationService.chatHistory" class="message">
+                {{ chat }}
+            </div>
+        </div>
+        <div>
+            <input #clearMe (keyup.enter)="onKeyup($event)" type="message" name="messageInput" id="messageInput"
+                maxlength="512" />
+        </div>
+    </div>
+</div>

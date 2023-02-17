@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+
+canvas {
+    cursor: crosshair;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#canvas {
+    @include mat-elevation(2);
+}
+
+#canvas-container {
+    position: relative;
+}
+
+.resizeButton {
+    background-color: black;
+    position: absolute;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+          Introduced in IE 10.
+          See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+        */
+    -ms-user-select: none;
+    user-select: none;
+}

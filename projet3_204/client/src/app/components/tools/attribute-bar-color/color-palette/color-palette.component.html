@@ -1,0 +1,11 @@
+<canvas
+    class="color-palette"
+    #palette
+    [attr.width]="paletteDim"
+    [attr.height]="paletteDim"
+    (mousedown)="onMouseDown($event)"
+    (contextmenu)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp($event)"
+    (mouseout)="onMouseOut()"
+></canvas>

@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="drawingInfo">
+        <div class="name">Drawing name</div>
+        <img class="drawing" src="assets/img/starry_night_image_test.jpg" alt="drawing" />
+    </div>
+    <div class="commentTable">
+        <table mat-table [dataSource]="dataSourceComments" class="mat-elevation-z8">
+            <!-- <ng-container matColumnDef="Title">
+                <th mat-header-cell *matHeaderCellDef><p>Nom</p></th>
+                <td mat-cell *matCellDef="let element">
+                    <a>{{ element.name }}</a>
+                </td>
+            </ng-container> -->
+
+            <ng-container matColumnDef="Commentaires">
+                <th mat-header-cell *matHeaderCellDef><p>Commentaires</p></th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="author">{{ element.author }}</div>
+                    <div class="comment">{{ element.comment }}</div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsCommentTable"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsCommentTable"></tr>
+        </table>
+        <button class="join-button" (click)="joinRoom()" mat-raised-button>Joindre</button>
+    </div>
+</div>

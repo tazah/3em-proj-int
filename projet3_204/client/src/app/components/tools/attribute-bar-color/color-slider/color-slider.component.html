@@ -1,0 +1,9 @@
+<canvas
+    class="color-slider"
+    #slider
+    [attr.width]="sliderWidth"
+    [attr.height]="sliderHeight"
+    (mousedown)="onMouseDown($event)"
+    (contextmenu)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+></canvas>

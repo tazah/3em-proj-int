@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+
+::ng-deep .export-dialog > mat-dialog-container {
+    background-color: transparent !important;
+    @include mat-elevation(0);
+}
+
+.export-dialog-layout {
+    display: grid;
+}
+
+.mat-form-field {
+    display: block;
+}
+
+.preview-layer {
+    @include mat-elevation(2);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.confirmationButton {
+    color: red;
+}
+
+.image-text-box,
+.image-filter {
+    width: 300px;
+    margin-left: 25px;
+}
+.image-type {
+    width: 300px;
+    margin-left: 25px;
+}
+
+.bottom-part {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    background-color: white;
+    width: 350px;
+    justify-self: right;
+    @include mat-elevation(2);
+    margin-right: 40px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.buttons {
+    margin-right: 10px;
+}
+
+.confirmationButton,
+.cancel-button {
+    font-size: 12px;
+}

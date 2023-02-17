@@ -1,0 +1,61 @@
+<div class="carrousel-dialog-layout">
+    <div class="search-field">
+        <mat-form-field class="chip-field">
+            <mat-label>Filtrer par étiquettes</mat-label>
+            <mat-chip-list #chipList aria-label="Tag selection" class="chip-list">
+                <mat-chip *ngFor="let tag of tags" [selectable]="false" [removable]="true" (removed)="remove(tag)">
+                    {{ tag }}
+                    <mat-icon matChipRemove svgIcon="mdi-close-circle"></mat-icon>
+                </mat-chip>
+                <input
+                    placeholder="Étiquettes...."
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="true"
+                    (matChipInputTokenEnd)="add($event)"
+                />
+            </mat-chip-list>
+        </mat-form-field>
+    </div>
+
+    <ng-container class="card-field">
+        <mat-grid-list *ngIf="!isEmpty" class="card-grid" cols="3">
+            <mat-grid-tile class="card-tile" *ngFor="let drawing of onlyThreeDrawings">
+                <mat-card class="card">
+                    <mat-card-header class="card-header">
+                        <mat-card-title class="card-title">{{ drawing.title }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="image-container" (click)="continueDrawing(drawing.image)">
+                            <img mat-card-image [src]="drawing.image" />
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <span class="card-footer"> Étiquettes: </span>
+                        <mat-chip *ngFor="let tag of drawing.tags" (focus)="onTagClick(tag)">{{ tag }} </mat-chip>
+                        <mat-card-actions align="end">
+                            <button mat-icon-button mat-button>
+                                <mat-icon (click)="deleteDrawing(drawing)" class="delete-button" svgIcon="mdi-delete"></mat-icon>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list *ngIf="isEmpty" class="card-grid" cols="3">Aucun dessin disponible</mat-grid-list>
+    </ng-container>
+
+    <mat-divider></mat-divider>
+
+    <mat-dialog-actions class="page-switchers" align="end">
+        <div class="page-label">
+            {{ pageLabelString }}
+        </div>
+        <button (click)="previousPage()" class="page-button" mat-icon-button mat-button>
+            <mat-icon class="page-switch-icon" svgIcon="mdi-chevron-left"></mat-icon>
+        </button>
+        <button (click)="nextPage()" class="page-button" mat-icon-button mat-button>
+            <mat-icon class="page-switch-icon" svgIcon="mdi-chevron-right"></mat-icon>
+        </button>
+    </mat-dialog-actions>
+</div>

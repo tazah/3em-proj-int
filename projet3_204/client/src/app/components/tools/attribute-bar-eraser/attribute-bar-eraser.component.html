@@ -1,0 +1,22 @@
+<div class="eraser-option-section">
+    <div class="section-title">Efface</div>
+
+    <div>
+        <div class="slider-title">
+            <span>Épaisseur</span>
+            <span id="unit">px</span>
+        </div>
+        <mat-slider
+            #widthSlider
+            type="number"
+            (change)="lineWidth = $event.value"
+            thumbLabel
+            [step]="sliderStep"
+            [min]="minWidthSlider"
+            [max]="maxWidthSlider"
+            [value]="lineWidth"
+            class="slider"
+        >
+        </mat-slider>
+    </div>
+</div>
